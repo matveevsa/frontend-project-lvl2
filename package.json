@@ -1,0 +1,38 @@
+{
+  "name": "gendiff-study-project",
+  "version": "0.0.1",
+  "description": "\"Frontend project-lvl2 Hexlet\"",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matveevsa/frontend-project-lvl2.git"
+  },
+  "author": "Matveev S. A.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matveevsa/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/matveevsa/frontend-project-lvl2#readme",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "gendiff": "dist/bin/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.2"
+  }
+}
