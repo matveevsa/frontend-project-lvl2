@@ -1,4 +1,5 @@
 {
+  "main": "dist/index.js",
   "name": "gendiff-study-project",
   "version": "0.0.1",
   "description": "\"Frontend project-lvl2 Hexlet\"",
@@ -35,6 +36,7 @@
     "eslint-plugin-jest": "^23.0.2"
   },
   "dependencies": {
-    "commander": "^3.0.2"
+    "commander": "^3.0.2",
+    "lodash": "^4.17.15"
   }
 }
