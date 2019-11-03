@@ -11,9 +11,10 @@ export default (data1, data2) => {
     if (!_.has(data1, key) && _.has(data2, key)) {
       return [...acc, `+ ${key}: ${data2[key]}`];
     }
-    return (data1[key] !== data2[key])
-      ? [...acc, `+ ${key}: ${data2[key]}\n- ${key}: ${data1[key]}`]
-      : [...acc, `  ${key}: ${data1[key]}`];
+    if (data1[key] !== data2[key]) {
+      return [...acc, `+ ${key}: ${data2[key]}\n- ${key}: ${data1[key]}`];
+    }
+    return [...acc, `  ${key}: ${data1[key]}`];
   }, []);
 
   return result.join('\n');

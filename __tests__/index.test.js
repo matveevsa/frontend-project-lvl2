@@ -1,3 +1,4 @@
+import fs from 'fs';
 import genDiff from '../src';
 
 const before = {
@@ -13,13 +14,8 @@ const after = {
   host: 'hexlet.io',
 };
 
-const result = `  host: hexlet.io
-+ timeout: 20
-- timeout: 50
-- proxy: 123.234.53.22
-- follow: false
-+ verbose: true`;
+test('fixtures test', () => {
+  const result = fs.readFileSync(`${__dirname}/../__fixtures__/result.txt`, 'utf-8');
 
-test('Generator', () => {
   expect(genDiff(before, after)).toEqual(result);
 });
