@@ -5,7 +5,7 @@ start:
 help:
 	npx babel-node src/bin/gendiff.js -h
 test:
-	npx babel-node src/bin/gendiff.js before.json after.json
+	npx jest
 publish:
 	npm publish --dry-run
 lint:
