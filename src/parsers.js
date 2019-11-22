@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
+import ini from 'ini';
 
 export default (pathToConfig) => {
   const absolutePath = path.isAbsolute(pathToConfig) ? pathToConfig : path.resolve(`${pathToConfig}`);
@@ -10,6 +11,7 @@ export default (pathToConfig) => {
   const parsers = {
     '.json': (data) => JSON.parse(data),
     '.yaml': (data) => yaml.safeLoad(data),
+    '.ini': (data) => ini.parse(data),
   };
 
   return parsers[typeConfig](dataConfig);

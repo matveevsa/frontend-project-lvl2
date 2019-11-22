@@ -13,3 +13,7 @@
 #### YAML Format
 
 [![asciicast](https://asciinema.org/a/8FbWSI10Ib8IJ019TPaaYkZmy.svg)](https://asciinema.org/a/8FbWSI10Ib8IJ019TPaaYkZmy)
+
+#### INI Format
+
+[![asciicast](https://asciinema.org/a/5llXiLfn6oUC9xu0H1NW89I9X.svg)](https://asciinema.org/a/5llXiLfn6oUC9xu0H1NW89I9X)

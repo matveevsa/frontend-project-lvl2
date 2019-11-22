@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import program from 'commander';
-import parser from './parsers';
+import parser from '../parsers';
 import genDiff from '..';
 
 
