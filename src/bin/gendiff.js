@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import program from 'commander';
-import fs from 'fs';
-import path from 'path';
+import parser from './parsers';
 import genDiff from '..';
+
 
 program
   .version('0.0.1')
@@ -11,15 +11,10 @@ program
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'Output format')
   .action((firstConfig, secondConfig) => {
-    const pathFirstConfig = path.resolve('data', `${firstConfig}`);
-    const pathSecondConfig = path.resolve('data', `${secondConfig}`);
+    const config1 = parser(firstConfig);
+    const config2 = parser(secondConfig);
 
-    const dataFirstConfig = fs.readFileSync(pathFirstConfig, 'utf-8');
-    const dataSecondConfig = fs.readFileSync(pathSecondConfig, 'utf-8');
-    const objectFromDataFirst = JSON.parse(dataFirstConfig);
-    const objectFromDataSecond = JSON.parse(dataSecondConfig);
-
-    console.log(genDiff(objectFromDataFirst, objectFromDataSecond));
+    console.log(genDiff(config1, config2));
   });
 
 program.parse(process.argv);

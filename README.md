@@ -6,4 +6,10 @@
 
 ### Пример работы приложения
 
+#### JSON Format
+
 [![asciicast](https://asciinema.org/a/fQo6OALF43ULWJwiy5EZEJa5P.svg)](https://asciinema.org/a/fQo6OALF43ULWJwiy5EZEJa5P)
+
+#### YAML Format
+
+[![asciicast](https://asciinema.org/a/8FbWSI10Ib8IJ019TPaaYkZmy.svg)](https://asciinema.org/a/8FbWSI10Ib8IJ019TPaaYkZmy)

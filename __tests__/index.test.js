@@ -1,21 +1,19 @@
 import fs from 'fs';
 import genDiff from '../src';
+import parser from '../src/bin/parsers';
 
-const before = {
-  host: 'hexlet.io',
-  timeout: 50,
-  proxy: '123.234.53.22',
-  follow: false,
-};
-
-const after = {
-  timeout: 20,
-  verbose: true,
-  host: 'hexlet.io',
-};
-
-test('fixtures test', () => {
+test('Config JSON test', () => {
   const result = fs.readFileSync(`${__dirname}/../__fixtures__/result.txt`, 'utf-8');
+  const after = parser(`${__dirname}/../__fixtures__/after.json`);
+  const before = parser(`${__dirname}/../__fixtures__/before.json`);
+
+  expect(genDiff(before, after)).toEqual(result);
+});
+
+test('Config YAML test', () => {
+  const result = fs.readFileSync(`${__dirname}/../__fixtures__/result.txt`, 'utf-8');
+  const after = parser(`${__dirname}/../__fixtures__/after.yaml`);
+  const before = parser(`${__dirname}/../__fixtures__/before.yaml`);
 
   expect(genDiff(before, after)).toEqual(result);
 });
