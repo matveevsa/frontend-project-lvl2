@@ -11,6 +11,7 @@ export default (pathToConfig) => {
   const parsers = {
     '.json': (data) => JSON.parse(data),
     '.yaml': (data) => yaml.safeLoad(data),
+    '.yml': (data) => yaml.safeLoad(data),
     '.ini': (data) => ini.parse(data),
   };
 

@@ -8,12 +8,12 @@
 
 #### JSON Format
 
-[![asciicast](https://asciinema.org/a/fQo6OALF43ULWJwiy5EZEJa5P.svg)](https://asciinema.org/a/fQo6OALF43ULWJwiy5EZEJa5P)
+[![asciicast](https://asciinema.org/a/uTC0I0HRoc58C8SKAN0ozrdbb.svg)](https://asciinema.org/a/uTC0I0HRoc58C8SKAN0ozrdbb)
 
 #### YAML Format
 
-[![asciicast](https://asciinema.org/a/8FbWSI10Ib8IJ019TPaaYkZmy.svg)](https://asciinema.org/a/8FbWSI10Ib8IJ019TPaaYkZmy)
+[![asciicast](https://asciinema.org/a/DJggnlr1S9stRRh9RAaRquIjH.svg)](https://asciinema.org/a/DJggnlr1S9stRRh9RAaRquIjH)
 
 #### INI Format
 
-[![asciicast](https://asciinema.org/a/5llXiLfn6oUC9xu0H1NW89I9X.svg)](https://asciinema.org/a/5llXiLfn6oUC9xu0H1NW89I9X)
+[![asciicast](https://asciinema.org/a/s4n4gzydZjnKCLK33tqEYt4Uq.svg)](https://asciinema.org/a/s4n4gzydZjnKCLK33tqEYt4Uq)

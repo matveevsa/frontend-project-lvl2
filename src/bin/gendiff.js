@@ -9,7 +9,7 @@ program
   .version('0.0.1')
   .arguments('format <firstConfig> <secondConfig>')
   .description('Compares two configuration files and shows a difference.')
-  .option('-f, --format [type]', 'Output format')
+  .option('-f, --format [type]', 'Output format', '.json')
   .action((firstConfig, secondConfig) => {
     const config1 = parser(firstConfig);
     const config2 = parser(secondConfig);
