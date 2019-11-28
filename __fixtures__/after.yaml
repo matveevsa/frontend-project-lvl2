@@ -4,7 +4,7 @@ common:
   setting3:
     key: value
   setting4: blah blah
-  setting5:clear
+  setting5:
     key5: value5
   setting6:
     key: value
