@@ -10,39 +10,29 @@ const afterYml = parser(`${__dirname}/../__fixtures__/after.yaml`);
 const beforeYml = parser(`${__dirname}/../__fixtures__/before.yaml`);
 const afterIni = parser(`${__dirname}/../__fixtures__/after.ini`);
 const beforeIni = parser(`${__dirname}/../__fixtures__/before.ini`);
+const resultTree = fs.readFileSync(`${__dirname}/../__fixtures__/treeTest.txt`, 'utf-8');
+const resultPlain = fs.readFileSync(`${__dirname}/../__fixtures__/plainTest.txt`, 'utf-8');
 
 test('Config JSON test tree format', () => {
-  const result = fs.readFileSync(`${__dirname}/../__fixtures__/treeTest.txt`, 'utf-8');
-
-  expect(genDiff(beforeJson, afterJson, tree)).toEqual(result);
+  expect(genDiff(beforeJson, afterJson, tree)).toEqual(resultTree);
 });
 
 test('Config YAML test tree format', () => {
-  const result = fs.readFileSync(`${__dirname}/../__fixtures__/treeTest.txt`, 'utf-8');
-
-  expect(genDiff(beforeYml, afterYml, tree)).toEqual(result);
+  expect(genDiff(beforeYml, afterYml, tree)).toEqual(resultTree);
 });
 
 test('Config INI test tree format', () => {
-  const result = fs.readFileSync(`${__dirname}/../__fixtures__/treeTest.txt`, 'utf-8');
-
-  expect(genDiff(beforeIni, afterIni, tree)).toEqual(result);
+  expect(genDiff(beforeIni, afterIni, tree)).toEqual(resultTree);
 });
 
 test('Config JSON test Plain format', () => {
-  const result = fs.readFileSync(`${__dirname}/../__fixtures__/plainTest.txt`, 'utf-8');
-
-  expect(genDiff(beforeJson, afterJson, plain)).toEqual(result);
+  expect(genDiff(beforeJson, afterJson, plain)).toEqual(resultPlain);
 });
 
 test('Config YAML test Plain format', () => {
-  const result = fs.readFileSync(`${__dirname}/../__fixtures__/plainTest.txt`, 'utf-8');
-
-  expect(genDiff(beforeYml, afterYml, plain)).toEqual(result);
+  expect(genDiff(beforeYml, afterYml, plain)).toEqual(resultPlain);
 });
 
 test('Config INI test Plain format', () => {
-  const result = fs.readFileSync(`${__dirname}/../__fixtures__/plainTest.txt`, 'utf-8');
-
-  expect(genDiff(beforeIni, afterIni, plain)).toEqual(result);
+  expect(genDiff(beforeIni, afterIni, plain)).toEqual(resultPlain);
 });
