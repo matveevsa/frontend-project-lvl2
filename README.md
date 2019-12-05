@@ -8,7 +8,7 @@
 
 #### JSON Format
 
-[![asciicast](https://asciinema.org/a/uTC0I0HRoc58C8SKAN0ozrdbb.svg)](https://asciinema.org/a/uTC0I0HRoc58C8SKAN0ozrdbb)
+[![asciicast](https://asciinema.org/a/eta420lk4HP9C4WJQZrrhUjuy.svg)](https://asciinema.org/a/eta420lk4HP9C4WJQZrrhUjuy)
 
 #### YAML Format
 
