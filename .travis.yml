@@ -11,7 +11,6 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - nyc --reporter=lcov yarn run unit
   - make lint
   - make test
 
