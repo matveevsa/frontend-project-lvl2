@@ -10,7 +10,7 @@ before_script:
   - ./cc-test-reporter before-build
 script:
   - make lint
-  - make test-coverage
+  - make test
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
