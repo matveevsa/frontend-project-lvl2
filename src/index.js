@@ -46,7 +46,6 @@ const generateAst = (beforeData, afterData) => {
       }];
     }
 
-
     return [...acc, { ...el, value: beforeData[key] }];
   }, []);
 };
