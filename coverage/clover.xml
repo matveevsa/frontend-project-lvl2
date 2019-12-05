@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1575553726979" clover="3.2.0">
+  <project timestamp="1575553726979" name="All files">
+    <metrics statements="56" coveredstatements="55" conditionals="30" coveredconditionals="28" methods="32" coveredmethods="31" elements="118" coveredelements="114" complexity="0" loc="56" ncloc="56" packages="3" files="6" classes="6"/>
+    <package name="src">
+      <metrics statements="16" coveredstatements="16" conditionals="17" coveredconditionals="17" methods="3" coveredmethods="3"/>
+      <file name="index.js" path="/home/driver/Desktop/Hexlet/frontend-project-lvl2/src/index.js">
+        <metrics statements="16" coveredstatements="16" conditionals="17" coveredconditionals="17" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="36" type="stmt"/>
+        <line num="6" count="36" type="stmt"/>
+        <line num="8" count="36" type="stmt"/>
+        <line num="9" count="144" type="stmt"/>
+        <line num="17" count="144" type="cond" truecount="4" falsecount="0"/>
+        <line num="18" count="27" type="stmt"/>
+        <line num="24" count="117" type="cond" truecount="4" falsecount="0"/>
+        <line num="25" count="18" type="stmt"/>
+        <line num="32" count="99" type="cond" truecount="4" falsecount="0"/>
+        <line num="33" count="45" type="stmt"/>
+        <line num="40" count="54" type="cond" truecount="5" falsecount="0"/>
+        <line num="41" count="27" type="stmt"/>
+        <line num="49" count="27" type="stmt"/>
+        <line num="54" count="9" type="stmt"/>
+        <line num="55" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.formatters">
+      <metrics statements="31" coveredstatements="31" conditionals="11" coveredconditionals="10" methods="24" coveredmethods="24"/>
+      <file name="index.js" path="/home/driver/Desktop/Hexlet/frontend-project-lvl2/src/formatters/index.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+      </file>
+      <file name="json.js" path="/home/driver/Desktop/Hexlet/frontend-project-lvl2/src/formatters/json.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+      </file>
+      <file name="plain.js" path="/home/driver/Desktop/Hexlet/frontend-project-lvl2/src/formatters/plain.js">
+        <metrics statements="10" coveredstatements="10" conditionals="5" coveredconditionals="5" methods="9" coveredmethods="9"/>
+        <line num="1" count="33" type="cond" truecount="2" falsecount="0"/>
+        <line num="3" count="30" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="15" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="14" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="48" type="stmt"/>
+        <line num="16" count="48" type="stmt"/>
+      </file>
+      <file name="tree.js" path="/home/driver/Desktop/Hexlet/frontend-project-lvl2/src/formatters/tree.js">
+        <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="5" methods="10" coveredmethods="10"/>
+        <line num="1" count="96" type="cond" truecount="0" falsecount="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="48" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="15" type="stmt"/>
+        <line num="6" count="15" type="stmt"/>
+        <line num="8" count="33" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="18" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="23" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="48" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="4"/>
+      <file name="parsers.js" path="/home/driver/Desktop/Hexlet/frontend-project-lvl2/src/utils/parsers.js">
+        <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="4"/>
+        <line num="7" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
