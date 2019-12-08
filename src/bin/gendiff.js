@@ -2,8 +2,8 @@
 
 import program from 'commander';
 import parser from '../utils/parsers';
-import genDiff from '..';
-
+import generateAst from '../utils/generateAst';
+import render from '../formatters/index';
 
 program
   .version('0.0.1')
@@ -13,8 +13,9 @@ program
   .action((firstConfig, secondConfig, { format: type }) => {
     const config1 = parser(firstConfig);
     const config2 = parser(secondConfig);
+    const configsAst = generateAst(config1, config2);
 
-    console.log(genDiff(config1, config2, type));
+    console.log(render(configsAst, type));
   });
 
 program.parse(process.argv);

@@ -23,9 +23,6 @@
   "bin": {
     "gendiff": "dist/bin/gendiff.js"
   },
-  "jest": {
-    "collectCoverage": true
-  },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",

@@ -8,4 +8,4 @@ const renderFormats = {
   json: (data) => renderJson(data),
 };
 
-export default (data, format) => renderFormats[format](data);
+export default (data, format = 'tree') => renderFormats[format](data);
