@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 import program from 'commander';
-import parser from '../utils/parsers';
-import generateAst from '../utils/generateAst';
-import render from '../formatters/index';
+import genDiff from '..';
 
 program
   .version('0.0.1')
@@ -11,11 +9,8 @@ program
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format [type]', 'Output format', 'tree')
   .action((firstConfig, secondConfig, { format: type }) => {
-    const config1 = parser(firstConfig);
-    const config2 = parser(secondConfig);
-    const configsAst = generateAst(config1, config2);
-
-    console.log(render(configsAst, type));
+    const difference = genDiff(firstConfig, secondConfig, type);
+    console.log(difference);
   });
 
 program.parse(process.argv);
