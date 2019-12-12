@@ -44,7 +44,7 @@ const generateAst = (beforeData, afterData) => {
     }
 
     return { ...el, value: beforeData[key] };
-  },);
+  });
 };
 
 export default generateAst;
