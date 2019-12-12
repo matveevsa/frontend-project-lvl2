@@ -1,52 +1,50 @@
 import _ from 'lodash';
 
 const generateAst = (beforeData, afterData) => {
-  const unionData = { ...beforeData, ...afterData };
-  const allKeys = Object.keys(unionData).sort();
+  const keys = _.union(_.keys(beforeData), _.keys(afterData)).sort();
 
-  return allKeys.reduce((acc, key) => {
+  return keys.map((key) => {
     const el = {
       name: key,
       value: '',
-      valueOld: '',
       status: 'normal',
       children: [],
     };
 
-    if (beforeData[key] instanceof Object && afterData[key] instanceof Object) {
-      return [...acc, {
+    if (_.isObject(beforeData[key]) && _.isObject(afterData[key])) {
+      return {
         ...el,
         children: generateAst(beforeData[key], afterData[key]),
-      }];
+      };
     }
 
     if (_.has(beforeData, key) && !_.has(afterData, key)) {
-      return [...acc, {
+      return {
         ...el,
         value: beforeData[key],
         status: 'deleted',
-      }];
+      };
     }
 
     if (!_.has(beforeData, key) && _.has(afterData, key)) {
-      return [...acc, {
+      return {
         ...el,
         value: afterData[key],
         status: 'added',
-      }];
+      };
     }
 
     if (_.has(beforeData, key) && _.has(afterData, key) && (beforeData[key] !== afterData[key])) {
-      return [...acc, {
+      return {
         ...el,
-        value: afterData[key],
-        valueOld: beforeData[key],
+        newValue: afterData[key],
+        oldValue: beforeData[key],
         status: 'changed',
-      }];
+      };
     }
 
-    return [...acc, { ...el, value: beforeData[key] }];
-  }, []);
+    return { ...el, value: beforeData[key] };
+  },);
 };
 
 export default generateAst;

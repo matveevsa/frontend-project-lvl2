@@ -6,8 +6,8 @@ const statusActions = {
   normal: ({ children }, path, f) => (children.length > 0 ? f(children, path) : ''),
   added: ({ value }, path) => `Property '${stringifyPath(path)}' was added with value: ${getValue(value)}`,
   deleted: (_, path) => `Property '${stringifyPath(path)}' was removed`,
-  changed: ({ value, valueOld }, path) => (
-    `Property '${stringifyPath(path)}' was updated. From ${getValue(valueOld)} to ${getValue(value)}`
+  changed: ({ newValue, oldValue }, path) => (
+    `Property '${stringifyPath(path)}' was updated. From ${getValue(oldValue)} to ${getValue(newValue)}`
   ),
 };
 
