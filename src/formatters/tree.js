@@ -1,20 +1,19 @@
+import _ from 'lodash';
+
 const getDepth = (count = 0) => ' '.repeat(count);
 
 const stringify = (item, count) => {
-  if (item instanceof Object) {
-    return Object.entries(item)
-      .map(([key, value]) => `{\n${getDepth(count + 4)}${key}: ${value}\n${getDepth(count)}}`).join('');
+  if (!_.isObject(item)) {
+    return item;
   }
-  return item;
+
+  return Object.entries(item)
+    .map(([key, value]) => `{\n${getDepth(count + 4)}${key}: ${value}\n${getDepth(count)}}`).join('');
 };
 
 const statusActions = {
-  normal: (el, count, f) => {
-    const value = el.children.length > 0
-      ? `{\n${f(el.children, count + 4)}\n${getDepth(count + 2)}}`
-      : stringify(el.value, count + 2);
-    return `${getDepth(count + 2)}${el.name}: ${value}`;
-  },
+  unchanged: ({ name, value }, count) => `${getDepth(count + 2)}${name}: ${stringify(value, count + 2)}`,
+  hasChildren: (el, count, func) => `${getDepth(count + 2)}${el.name}: {\n${func(el.children, count + 4)}\n${getDepth(count + 2)}}`,
   added: (el, count) => `${getDepth(count)}+ ${el.name}: ${stringify(el.value, count + 2)}`,
   deleted: (el, count) => `${getDepth(count)}- ${el.name}: ${stringify(el.value, count + 2)}`,
   changed: (el, count) => `${getDepth(count)}- ${el.name}: ${stringify(el.oldValue, count + 2)}\n${getDepth(count)}+ ${el.name}: ${stringify(el.newValue, count + 2)}`,

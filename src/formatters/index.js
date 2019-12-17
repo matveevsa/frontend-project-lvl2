@@ -1,11 +1,10 @@
 import renderTree from './tree';
 import renderPlain from './plain';
-import renderJson from './json';
 
 const renderFormats = {
-  tree: (data) => renderTree(data),
-  plain: (data) => renderPlain(data),
-  json: (data) => renderJson(data),
+  tree: renderTree,
+  plain: renderPlain,
+  json: JSON.stringify,
 };
 
 export default (data, format = 'tree') => renderFormats[format](data);

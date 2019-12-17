@@ -3,7 +3,8 @@ const getValue = (value) => (value instanceof Object ? '[complex value]' : value
 const stringifyPath = (path) => path.join('.');
 
 const statusActions = {
-  normal: ({ children }, path, f) => (children.length > 0 ? f(children, path) : ''),
+  unchanged: () => '',
+  hasChildren: ({ children }, path, func) => func(children, path),
   added: ({ value }, path) => `Property '${stringifyPath(path)}' was added with value: ${getValue(value)}`,
   deleted: (_, path) => `Property '${stringifyPath(path)}' was removed`,
   changed: ({ newValue, oldValue }, path) => (

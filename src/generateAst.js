@@ -4,23 +4,24 @@ const generateAst = (beforeData, afterData) => {
   const keys = _.union(_.keys(beforeData), _.keys(afterData)).sort();
 
   return keys.map((key) => {
-    const el = {
+    const element = {
       name: key,
       value: '',
-      status: 'normal',
+      status: 'unchanged',
       children: [],
     };
 
     if (_.isObject(beforeData[key]) && _.isObject(afterData[key])) {
       return {
-        ...el,
+        ...element,
+        status: 'hasChildren',
         children: generateAst(beforeData[key], afterData[key]),
       };
     }
 
     if (_.has(beforeData, key) && !_.has(afterData, key)) {
       return {
-        ...el,
+        ...element,
         value: beforeData[key],
         status: 'deleted',
       };
@@ -28,7 +29,7 @@ const generateAst = (beforeData, afterData) => {
 
     if (!_.has(beforeData, key) && _.has(afterData, key)) {
       return {
-        ...el,
+        ...element,
         value: afterData[key],
         status: 'added',
       };
@@ -36,14 +37,14 @@ const generateAst = (beforeData, afterData) => {
 
     if (_.has(beforeData, key) && _.has(afterData, key) && (beforeData[key] !== afterData[key])) {
       return {
-        ...el,
+        ...element,
         newValue: afterData[key],
         oldValue: beforeData[key],
         status: 'changed',
       };
     }
 
-    return { ...el, value: beforeData[key] };
+    return { ...element, value: beforeData[key] };
   });
 };
 
