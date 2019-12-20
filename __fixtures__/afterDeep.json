@@ -1,0 +1,24 @@
+{
+  "common": {
+    "deep1": {
+      "deep2": {
+        "deep3": {
+          "deep4": {
+            "deep5": {
+              "key": "finish"
+            }
+          }
+        }
+      }
+    }
+  },
+  "group1": {
+    "foo": "bar",
+    "baz": "bars",
+    "nest": "str"
+  },
+
+  "group3": {
+    "fee": 100500
+  }
+}

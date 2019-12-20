@@ -1,0 +1,25 @@
+{
+  "common": {
+    "deep1": {
+      "deep2": {
+        "deep3": {
+          "deep4": {
+            "deep5": {
+              "key": "start"
+            }
+          }
+        }
+      }
+    }
+  },
+  "group1": {
+    "baz": "bas",
+    "foo": "bar",
+    "nest": {
+      "key": "value"
+    }
+  },
+  "group2": {
+    "abc": 12345
+  }
+}

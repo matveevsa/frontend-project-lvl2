@@ -1,28 +1,28 @@
-import _ from 'lodash';
+import { isObject } from 'lodash';
 
-const getDepth = (count = 0) => ' '.repeat(count);
+const getCountSpace = (countSpace = 0) => ' '.repeat(countSpace);
 
-const stringify = (item, count) => {
-  if (!_.isObject(item)) {
+const stringify = (item, countSpace) => {
+  if (!isObject(item)) {
     return item;
   }
 
-  return Object.entries(item)
-    .map(([key, value]) => `{\n${getDepth(count + 4)}${key}: ${value}\n${getDepth(count)}}`).join('');
+  return `{${Object.entries(item)
+    .map(([key, value]) => `\n${getCountSpace(countSpace + 4)}${key}: ${value}`).join('')}\n${getCountSpace(countSpace)}}`;
 };
 
 const statusActions = {
-  unchanged: ({ name, value }, count) => `${getDepth(count + 2)}${name}: ${stringify(value, count + 2)}`,
-  hasChildren: ({ name, children }, count, func) => `${getDepth(count + 2)}${name}: {\n${func(children, count + 4)}\n${getDepth(count + 2)}}`,
-  added: ({ name, value }, count) => `${getDepth(count)}+ ${name}: ${stringify(value, count + 2)}`,
-  deleted: ({ name, value }, count) => `${getDepth(count)}- ${name}: ${stringify(value, count + 2)}`,
-  changed: ({ name, oldValue, newValue }, count) => (
-    `${getDepth(count)}- ${name}: ${stringify(oldValue, count + 2)}\n${getDepth(count)}+ ${name}: ${stringify(newValue, count + 2)}`
+  unchanged: ({ name, value }, countSpace) => `${getCountSpace(countSpace + 2)}${name}: ${stringify(value, countSpace + 2)}`,
+  hasChildren: ({ name, children }, countSpace, func) => `${getCountSpace(countSpace + 2)}${name}: {\n${func(children, countSpace + 4)}\n${getCountSpace(countSpace + 2)}}`,
+  added: ({ name, value }, countSpace) => `${getCountSpace(countSpace)}+ ${name}: ${stringify(value, countSpace + 2)}`,
+  deleted: ({ name, value }, countSpace) => `${getCountSpace(countSpace)}- ${name}: ${stringify(value, countSpace + 2)}`,
+  changed: ({ name, oldValue, newValue }, countSpace) => (
+    `${getCountSpace(countSpace)}- ${name}: ${stringify(oldValue, countSpace + 2)}\n${getCountSpace(countSpace)}+ ${name}: ${stringify(newValue, countSpace + 2)}`
   ),
 };
 
-const renderTree = (data, count = 2) => data
-  .map((el) => statusActions[el.status](el, count, renderTree))
+const renderTree = (data, countSpace = 2) => data
+  .map((el) => statusActions[el.status](el, countSpace, renderTree))
   .join('\n');
 
 const renderFinishTree = (tree) => `{\n${renderTree(tree)}\n}`;

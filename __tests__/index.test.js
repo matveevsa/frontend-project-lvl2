@@ -22,3 +22,10 @@ test.each`
 
   expect(genDiff(pathToFile1, pathToFile2, format)).toEqual(result);
 });
+
+test('Test tree deep', () => {
+  const pathToFile1 = getFixturePath('beforeDeep.json');
+  const pathToFile2 = getFixturePath('afterDeep.json');
+  const result = fs.readFileSync(getFixturePath('treeDeepResult.txt'), 'utf-8');
+  expect(genDiff(pathToFile1, pathToFile2)).toEqual(result);
+});

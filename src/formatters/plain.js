@@ -1,9 +1,11 @@
-const getValue = (value) => (value instanceof Object ? '[complex value]' : value);
+import { isObject } from 'lodash';
+
+const getValue = (value) => (isObject(value) ? '[complex value]' : value);
 
 const stringifyPath = (path) => path.join('.');
 
 const statusActions = {
-  unchanged: () => '',
+  unchanged: () => null,
   hasChildren: ({ children }, path, func) => func(children, path),
   added: ({ value }, path) => `Property '${stringifyPath(path)}' was added with value: ${getValue(value)}`,
   deleted: (_, path) => `Property '${stringifyPath(path)}' was removed`,
@@ -14,7 +16,7 @@ const statusActions = {
 
 const renderPlain = (data, path = []) => data
   .map((el) => statusActions[el.status](el, path.concat(el.name), renderPlain))
-  .filter((el) => el !== '')
+  .filter((el) => el !== null)
   .join('\n');
 
 export default renderPlain;
